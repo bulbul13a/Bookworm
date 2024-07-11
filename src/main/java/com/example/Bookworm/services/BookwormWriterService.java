@@ -9,7 +9,5 @@ public interface BookwormWriterService {
 
 	ResponseEntity<?> getAll();
 
-	ResponseEntity<?> update(Long id, BookwormWriter bookwormWriter);
-
 	ResponseEntity<?> delete(Long id);
 }

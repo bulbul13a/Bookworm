@@ -2,7 +2,10 @@ package com.example.Bookworm.enums;
 
 public enum Category {
 	
-	FICTION("Fiction"), THRILLER("Thriller"), NOVEL("Novel");
+	FICTION("Fiction"),
+	SCIENCE("Science"),
+	NOVEL("Novel"),
+	FANTASY("Fantasy");
 	
 	private String value;
 	

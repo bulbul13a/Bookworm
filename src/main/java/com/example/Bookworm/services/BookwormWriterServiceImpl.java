@@ -30,14 +30,6 @@ public class BookwormWriterServiceImpl implements BookwormWriterService{
 		return ResponseEntity.ok(bookwormWriterRepository.findAll());
 	}
 
-	@Override
-	public ResponseEntity<?> update(Long id, BookwormWriter bookwormWriter) {
-		Optional<BookwormWriter> optionalExistingBW = bookwormWriterRepository.findById(id);
-		if(optionalExistingBW.isPresent()) {
-			optionalExistingBW.get().setCategory(bookwormWriter.getCategory().trim());
-		}
-		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ResponseMessage("Not Found"));
-	}
 	
 	@Override
 	public ResponseEntity<?> delete(Long id) {

@@ -1,7 +1,5 @@
 package com.example.Bookworm.models;
 
-import java.util.Objects;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,9 +17,6 @@ public class BookwormWriter {
 	
 	@Column(name = "name")
 	private String name;
-	
-	@Column(name = "category")
-	private String category;
 
 	public String getName() {
 		return name;
@@ -29,14 +24,6 @@ public class BookwormWriter {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getCategory() {
-		return Objects.isNull(category) ? "N/A": category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
 	}
 
 	public Long getId() {

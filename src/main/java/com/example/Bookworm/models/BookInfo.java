@@ -20,7 +20,7 @@ public class BookInfo extends Root{
 	private List<Book> books;
 	
 	@ManyToOne
-	private Writer writer;
+	private BookwormWriter bookwormWriter;
 	
 	public String getName() {
 		return name;
@@ -28,11 +28,11 @@ public class BookInfo extends Root{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Writer getWriter() {
-		return writer;
+	public BookwormWriter getBookwormWriter() {
+		return bookwormWriter;
 	}
-	public void setWriter(Writer writer) {
-		this.writer = writer;
+	public void setWriter(BookwormWriter bookwormWriter) {
+		this.bookwormWriter = bookwormWriter;
 	}
 	public List<Book>getBooks(){
 		return Objects.isNull(books)? new ArrayList<>() : books;

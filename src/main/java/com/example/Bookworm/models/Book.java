@@ -8,7 +8,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
 
 @Entity
 public class Book extends Root{
