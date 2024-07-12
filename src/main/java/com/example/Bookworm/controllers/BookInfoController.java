@@ -2,6 +2,7 @@ package com.example.Bookworm.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +21,7 @@ public class BookInfoController {
 	public ResponseEntity<?> addBookInfo(@RequestBody BookInfo bookInfo){
 		return bookInfoService.addBookInfo(bookInfo);
 	}
-	@PostMapping("/book-info/get")
+	@GetMapping("/book-info/get")
 	public ResponseEntity<?> getBookInfo(){
 		return bookInfoService.getBookInfo();
 	}
