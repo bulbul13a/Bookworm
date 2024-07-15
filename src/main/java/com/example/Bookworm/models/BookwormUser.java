@@ -46,6 +46,4 @@ public class BookwormUser {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-
 }
