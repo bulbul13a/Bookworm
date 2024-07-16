@@ -66,7 +66,7 @@ public class BookLendingRequestServiceImpl implements BookLendingRequestService{
 	}
 
 	@Override
-	public ResponseEntity<?> returnDate(Long id) {
+	public ResponseEntity<?> returnBook(Long id) {
 		
 		Optional<BookLendingRequest> optionalRequest = bookLendingRequestRepository.findById(id);
 		

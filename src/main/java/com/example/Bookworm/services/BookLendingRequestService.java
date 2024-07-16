@@ -7,5 +7,5 @@ import com.example.Bookworm.models.BookLendingRequest;
 public interface BookLendingRequestService {
 	ResponseEntity<?> addRequest (BookLendingRequest request);
 	ResponseEntity<?> approveRequest(Long id, String approval);
-	ResponseEntity<?> returnDate(Long id);
+	ResponseEntity<?> returnBook(Long id);
 }
