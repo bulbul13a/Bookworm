@@ -11,6 +11,7 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
@@ -21,6 +22,8 @@ import jakarta.persistence.TemporalType;
 @Entity
 @Table(name = "book_requests")
 public class BookLendingRequest extends Root{
+	
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	protected Date creationDate;
@@ -40,15 +43,17 @@ public class BookLendingRequest extends Root{
 	@Enumerated(EnumType.STRING)
 	private Status lendRequestStatus;
 	
-	@ManyToOne
-	private BookwormUser requester;
 	
 	@Enumerated(EnumType.STRING)
 	private RequestStatus reqStatus;
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
+	private BookwormUser requester;
+	
+	@OneToMany(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "book_requests_id", referencedColumnName = "id")
 	private List<Book> books;
+	
 
 	public Date getCreationDate() {
 		return creationDate;
@@ -113,6 +118,4 @@ public class BookLendingRequest extends Root{
 	public void setReqStatus(RequestStatus reqStatus) {
 		this.reqStatus = reqStatus;
 	}
-	
-	
 }

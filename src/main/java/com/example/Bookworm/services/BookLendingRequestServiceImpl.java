@@ -1,6 +1,7 @@
 package com.example.Bookworm.services;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -89,4 +90,14 @@ public class BookLendingRequestServiceImpl implements BookLendingRequestService{
 
 	}
 	
+	@Override
+	public ResponseEntity<?> getRequests(){
+		return ResponseEntity.ok(bookLendingRequestRepository.findAll());
+	}
+	
+	@Override
+	public ResponseEntity<?> getRequestsByStatus(List<RequestStatus> requestStatuses){
+		List<BookLendingRequest> requestsList = bookLendingRequestRepository.findByRequestStatus(requestStatuses);
+		return ResponseEntity.ok(requestsList);
+	}
 }

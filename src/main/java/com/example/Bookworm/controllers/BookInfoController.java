@@ -26,7 +26,7 @@ public class BookInfoController {
 		return bookInfoService.getBookInfo();
 	}
 
-	@PostMapping("/add-book/book-info/{id}")
+	@PostMapping("/add-book/{id}/book-info")
 	public ResponseEntity<?> addBookToInfo(@PathVariable(name = "id") Long bookInfoId,
 			@RequestBody Book book){
 		return bookInfoService.addBookToInfo(bookInfoId, book);
