@@ -45,7 +45,7 @@ public class BookLendingRequest extends Root{
 	
 	
 	@Enumerated(EnumType.STRING)
-	private RequestStatus reqStatus;
+	private RequestStatus requestStatus;
 	
 	@ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
 	private BookwormUser requester;
@@ -112,10 +112,10 @@ public class BookLendingRequest extends Root{
 	}
 	
 	public RequestStatus getReqStatus() {
-		return reqStatus;
+		return requestStatus;
 	}
 	
 	public void setReqStatus(RequestStatus reqStatus) {
-		this.reqStatus = reqStatus;
+		this.requestStatus = reqStatus;
 	}
 }
